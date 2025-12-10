@@ -18,20 +18,19 @@ namespace Karesz
 		string betöltendő_pálya = "palya26.txt";
 		void TANÁR_ROBOTJAI()
 		{
+			List<Vektor> mezők = Vektor.Rács(new Vektor(0, 0), new Vektor(40,30));
+			foreach (Vektor mező in mezők)
+				pálya[mező] = üres;
 
-			List<Vektor> mezők = new List<Vektor>(40*30);
+			mezők.Shuffle();
 
-			for (int x = 0; x <= 40; x++)
-			{
-				for (int y = 0; y <= 30; y++)
-				{
-					mezők.Add(new Vektor(x, y));
-				}
-			}
+			int kövek_száma = r.Next(20, 40*30-500);
 
+			for (int i = 0; i < kövek_száma; i++)
+				pálya[mezők[i]] = fekete;
 
-			Robot karesz = new Robot("Karesz", 0, 0, 0, 0, 0, r.Next(1,30), r.Next(1,40), 0, false, false);
-			Betölt(betöltendő_pálya);
+			Robot karesz = new Robot("Karesz", 0, 0, 0, 0, 0, r.Next(1,30), r.Next(1,40), r.Next(4), false, false);
+			//Betölt(betöltendő_pálya);
 			Frissít();
 
 			//Robot lilesz = new Robot("Lilesz", 1000, 1000, 1000, 1000, 0, 10, 22, 0);

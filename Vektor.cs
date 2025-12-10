@@ -116,6 +116,22 @@ namespace Karesz
 		static int intervallumba(int b, int x, int j) => Math.Min(Math.Max(b, x), j);
 		public static Vektor dobozba(Vektor ba, Vektor v, Vektor jf) => new Vektor(intervallumba(ba.X, v.X, jf.X), intervallumba(ba.Y, v.Y, jf.Y));
 
+
+		public static List<Vektor> Rács(Vektor bf, Vektor jl)
+		{
+			Vektor átló = jl - bf;
+			List<Vektor> mezők = new List<Vektor>((átló.X+1)*(átló.Y+1));
+
+			for (int x = 0; x <= 40; x++)
+			{
+				for (int y = 0; y <= 30; y++)
+				{
+					mezők.Add(new Vektor(x, y));
+				}
+			}
+
+			return mezők;
+		}
 		#endregion
 	}
 }
