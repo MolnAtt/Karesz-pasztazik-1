@@ -1,5 +1,5 @@
 # Karesz vonalat követ
-Karesz szedje fel a pályán található összes kavicsot!
+Karesz szedje fel a pályán található összes kavicsot! A végén Karesz mondja meg, hogy mennyit szedett így fel!
 
 # K.A.R.E.SZ.
 A Középiskolai Algoritmusokra Rávezető Edukációs Szoftver (továbbiakban K.A.R.E.SZ.) 
